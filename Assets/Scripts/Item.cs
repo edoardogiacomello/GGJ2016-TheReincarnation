@@ -10,7 +10,7 @@ public class Item : MonoBehaviour, IItem {
 	public bool isItemOverCalduron = false;
 	public bool isItemOverOtherItems = false;
 
-    private GameObject itemCollided;
+    private IItem itemCollided;
      
 	void Start(){
 		startingPosition = transform.position;
@@ -61,7 +61,20 @@ public class Item : MonoBehaviour, IItem {
         }
         else if (isItemOverOtherItems)
         {
-            gameObject.SetActive(false);
+            IItem sumOfItem = GameManager.instance.combinationManager.Combine(this, itemCollided);
+            if (sumOfItem != null)
+            {
+                // both items exists, disable them
+                gameObject.SetActive(false);
+                itemCollided.GameObject().SetActive(false);
+            }
+            else {
+                GameManager.instance.WrongCombination();
+                ResetPosition();
+            }
+            
+            
+            
             // TODO move both objects outside the scene (using itemCollided for the other one)
 
         }
@@ -87,7 +100,7 @@ public class Item : MonoBehaviour, IItem {
         else if (other.gameObject.tag.Equals("Item")){
             isItemOverOtherItems = true;
             // save the game object reference to remove the item from the scene
-            itemCollided = other.gameObject;
+            itemCollided = other.gameObject.GetComponent<Item>();
         } else {
             isItemOverCalduron = false;
             isItemOverOtherItems = false;
@@ -106,7 +119,6 @@ public class Item : MonoBehaviour, IItem {
     /// </summary>
 
     public void ResetPosition() {
-        // TODO reset position
 		transform.position = startingPosition;
     }
 

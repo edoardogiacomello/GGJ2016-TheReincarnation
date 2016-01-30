@@ -4,10 +4,10 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public StageManager stageManager;
+    public CombinationManager combinationManager;
 
-
-	//Game Variables
-	public int maxHealth;
+    //Game Variables
+    public int maxHealth;
 	public int currentHealth;
 	public int healthLossOnStageFailure;
 
@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour {
 	public bool isDragEnabled;
 	public IItem currentDraggedItem;
 
+    
+
 	void Awake() {
+        
 		if (instance == null)
 			instance = this;
 		else
@@ -83,6 +86,11 @@ public class GameManager : MonoBehaviour {
 
 	void EnableDrag(bool isEnabled){
 		GameManager.instance.isDragEnabled = isEnabled;
-	}	
+	}
+
+    public void WrongCombination() {
+        Debug.Log("Wrong Combination");
+        // TODO wrong combination 
+    }
 
 }

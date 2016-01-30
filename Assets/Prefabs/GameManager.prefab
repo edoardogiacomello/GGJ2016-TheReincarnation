@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11414132}
   - 114: {fileID: 11408916}
   - 114: {fileID: 11483110}
+  - 114: {fileID: 11487330}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -54,9 +55,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageManager: {fileID: 11483110}
-  maxHealth: 0
+  combinationManager: {fileID: 11408916}
+  maxHealth: 2
   currentHealth: 0
-  healthLossOnStageFailure: 0
+  healthLossOnStageFailure: 1
   isDragEnabled: 0
 --- !u!114 &11483110
 MonoBehaviour:
@@ -69,8 +71,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae28d3fea063a14cbb8c1746ee159f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: []
+  stages:
+  - {fileID: 11487330}
+  - {fileID: 11487330}
+  - {fileID: 11487330}
   currentStageIndex: 0
+--- !u!114 &11487330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3e1cf0c2087a142ac2c10773e550cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 5
+  suggestion: {fileID: 0}
+  requiredItem: {fileID: 0}
+  isLost: 0
+  isFinished: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
