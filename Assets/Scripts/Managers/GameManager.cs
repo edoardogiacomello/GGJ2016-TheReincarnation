@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public StageManager stageManager;
     public CombinationManager combinationManager;
+	public GlobalSoundManager globalSoundManager;
 
     //Game Variables
     public int maxHealth;
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour {
 		currentHealth = maxHealth;
 		if (stageManager == null) Debug.Log("Warning: please attach a StageManager component to the GameManager object");
 
+		//Starting the background music
+		globalSoundManager.musicSoundManager.StartMusic();
 	}
 
 	public void OnGameStart(){
