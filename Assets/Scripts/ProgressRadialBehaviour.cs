@@ -10,6 +10,7 @@ namespace ProgressBar
     [RequireComponent(typeof(Image))]
     public class ProgressRadialBehaviour : MonoBehaviour, IIncrementable, IDecrementable
     {
+
         /// <summary>
         /// This script's Filler is its own Image component
         /// </summary>
@@ -44,13 +45,6 @@ namespace ProgressBar
         public float TransitoryValue { get; private set; }
 
         /// <summary>
-        /// If a Text component is set here it will be updated with the ProgressBar value (percentage).
-        /// Otherwise no Error will be raised.
-        /// </summary>
-        [SerializeField]
-        private Text m_AttachedText;
-
-        /// <summary>
         /// In pixels per seconds, the speed at which the Filler will be animated.
         /// </summary>
         public float ProgressSpeed;
@@ -76,11 +70,7 @@ namespace ProgressBar
         
         void Start()
         {
-            m_Fill = GetComponent<Image>();
-            m_Value = 0;
-            IncrementValue(100);
-            ProgressSpeed = 0.1f;
-            SetFillerSize(0);
+            
         }
 
         void Update()
@@ -135,9 +125,6 @@ namespace ProgressBar
         /// <param name="fill">new Fill amount as a fraction</param>
         public void SetFillerSize(float fill)
         {
-            if (m_AttachedText)
-                m_AttachedText.text = Mathf.RoundToInt(fill*100).ToString() + " %";
-
             m_Fill.fillAmount = fill;
         }
 
@@ -182,5 +169,20 @@ namespace ProgressBar
 
             if (m_Value < 0) m_Value = 0;
         }
+
+        /// <summary>
+        /// Starts the progress bar with a precise time
+        /// </summary>
+        public void StartRound(float time)
+        {
+            m_Fill = GetComponent<Image>();
+            m_Value = 0;
+            IncrementValue(100);
+            ProgressSpeed = 1f/time;
+            SetFillerSize(0);
+        }
+
     }
+
+
 }

@@ -46,9 +46,10 @@ public class StageManager : MonoBehaviour {
 		//TODO: Show suggestion
 		//Enabling dragging of items on gameManager
 		GameManager.instance.isDragEnabled = true;
-		//TODO: Dragging Phase 
+        //TODO: Dragging Phase 
 
-		//Starts the countdown for this phase
+        //Starts the countdown for this phase
+        GameManager.instance.progressBar.StartRound(stage.maxTime);
 		Invoke("OnStageTimeout", CurrentStage.maxTime);
 	}
 

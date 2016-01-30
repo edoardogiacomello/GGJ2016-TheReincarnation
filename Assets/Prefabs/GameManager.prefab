@@ -41,6 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageManager: {fileID: 0}
   combinationManager: {fileID: 0}
+  globalSoundManager: {fileID: 0}
+  progressBar: {fileID: 0}
   maxHealth: 2
   currentHealth: 0
   healthLossOnStageFailure: 1

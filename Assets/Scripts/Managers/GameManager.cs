@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ProgressBar;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public StageManager stageManager;
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
+    //Progress Bar
+    public ProgressRadialBehaviour progressBar;
 
     //Game Variables
     public int maxHealth;
@@ -16,8 +19,6 @@ public class GameManager : MonoBehaviour {
 	//Item Drag Variables
 	public bool isDragEnabled;
 	public IItem currentDraggedItem;
-
-    
 
 	void Awake() {
         
