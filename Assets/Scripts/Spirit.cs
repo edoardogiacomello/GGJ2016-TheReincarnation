@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Spirit : MonoBehaviour {
 	AudioSource audioSource;
+	public float suggestionTime = 2f;
 
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
@@ -18,9 +19,9 @@ public class Spirit : MonoBehaviour {
 	
 	}
 
-	public void ShowSuggestion(Suggestion suggestion, float time){
+	public void ShowSuggestion(Suggestion suggestion){
 		//TODO: Insert a canvas and show the suggestion on the baloon
-		Invoke("HideSuggestion", time);
+		Invoke("HideSuggestion", suggestionTime);
 	}
 
 	public void HideSuggestion(){
@@ -40,6 +41,10 @@ public class Spirit : MonoBehaviour {
 
 	public void Trasnformation(){
 		PlayTransformationSound();
+	}
+
+	public void Die(){
+		
 	}
 
 	public void PlayRegainHealthSound(){
