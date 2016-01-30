@@ -3,14 +3,16 @@ using System.Collections;
 
 public class StageManager : MonoBehaviour {
 	public static StageManager instance;
-	public Stage[] stages;
-	public int currentStageIndex = 0;
+	private Stage[] stages;
+	private int currentStageIndex = 0;
 
 	void Awake() {
 		if (instance == null)
 			instance = this;
 		else
 			Destroy(gameObject);
+		stages = GetComponents<Stage>();
+
 	}
 
 	public Stage CurrentStage {

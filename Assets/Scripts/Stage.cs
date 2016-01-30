@@ -19,9 +19,6 @@ public class Stage : MonoBehaviour {
 	/// </summary>
 	public Item requiredItem;
 
-	public bool isLost;
-	public bool isFinished;
-
 
 	//TODO: Implement methods
 
