@@ -5,6 +5,7 @@ public class StageManager : MonoBehaviour {
 	public static StageManager instance;
 	private Stage[] stages;
 	private int currentStageIndex = 0;
+	private Stage currentStage;
 
 	void Awake() {
 		if (instance == null)
@@ -17,7 +18,7 @@ public class StageManager : MonoBehaviour {
 
 	public Stage CurrentStage {
 		get {
-			return this.stages[currentStageIndex];
+			return currentStage;
 		}
 	}
 
@@ -27,10 +28,11 @@ public class StageManager : MonoBehaviour {
 	/// </summary>
 	public void StartNextStage(){
 		//TODO: Implement this
-		if (currentStageIndex + 1 < stages.Length){
+		if (currentStageIndex <= stages.Length - 1){
+			currentStage = stages[currentStageIndex];
+			//Debug.Log(CurrentStage.maxTime.ToString());
+			StartStage(currentStage);
 			currentStageIndex++;
-			//TODO: Start the stage here
-			StartStage(CurrentStage);
 		}
 		else {
 			GameManager.instance.GameFinished();
