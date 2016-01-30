@@ -352,6 +352,25 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312509279}
+--- !u!224 &428004761
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22410722, guid: 64db8aba51cd01a47b5dd43a05785951,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 788794979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 312509280}
+  m_Father: {fileID: 915956214}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 279, y: 81}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &428352959
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,25 +424,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1658994904}
   m_Script: {fileID: 11500000, guid: 9dc4cf0b345552542af35efe1657cb5a, type: 3}
---- !u!224 &428004761
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22410722, guid: 64db8aba51cd01a47b5dd43a05785951,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 788794979}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 312509280}
-  m_Father: {fileID: 915956214}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 279, y: 81}
-  m_SizeDelta: {x: 150, y: 150}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &516510445
 Prefab:
   m_ObjectHideFlags: 0
@@ -1436,6 +1436,10 @@ Prefab:
       propertyPath: requiredItem
       value: 
       objectReference: {fileID: 516510449}
+    - target: {fileID: 11455966, guid: 4920a16e7e3191c408f42ea3ccf58e4e, type: 2}
+      propertyPath: maxTime
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4920a16e7e3191c408f42ea3ccf58e4e, type: 2}
   m_IsPrefabParent: 0
