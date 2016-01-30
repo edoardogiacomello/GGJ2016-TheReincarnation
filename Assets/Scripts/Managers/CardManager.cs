@@ -9,6 +9,9 @@ public class CardManager : MonoBehaviour {
     private float cameraZValue;
     private bool inSlide;
 
+    private AudioSource audioSrc;
+    public GameObject sfondo;
+
     //per lo sweep
     private Vector3 startPosition = Vector3.zero;
     private Vector3 endPosition = Vector3.zero;
@@ -26,6 +29,7 @@ public class CardManager : MonoBehaviour {
         actualSet = 0;
         cameraZValue = Camera.main.transform.position.z;
         inSlide = false;
+        audioSrc = GetComponent<AudioSource>();
     }
 
 
@@ -99,6 +103,8 @@ public class CardManager : MonoBehaviour {
 
     IEnumerator CardTransition(int newSetPos)
     {
+        audioSrc.Play();
+
         float t = 0.0f;
         Vector3 learpedPos;
         Vector3 startingPos = setPositions[actualSet].position;
@@ -107,6 +113,7 @@ public class CardManager : MonoBehaviour {
             t += Time.deltaTime * (Time.timeScale / transitionDuration);
             learpedPos = Vector3.Lerp(startingPos, setPositions[newSetPos].position, t);
             Camera.main.transform.position = new Vector3(learpedPos.x, learpedPos.y, cameraZValue);
+            sfondo.transform.position = new Vector3(learpedPos.x, learpedPos.y, sfondo.transform.position.z);
             yield return 0;
 
         }

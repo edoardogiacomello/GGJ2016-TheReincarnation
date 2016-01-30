@@ -12,12 +12,14 @@ public class Card : MonoBehaviour
 
     private Quaternion cardHiddenRotation;
     private Quaternion cardRevelaedRotation;
+    private AudioSource audioSrc;
     // Use this for initialization
     void Start()
     {
         cardHiddenRotation = Quaternion.identity;
         cardRevelaedRotation = Quaternion.Euler(0, 180f, 0);
         turnDirection = Vector3.up;
+        audioSrc = GetComponent<AudioSource>();
     }
 
 
@@ -25,6 +27,7 @@ public class Card : MonoBehaviour
     {   
         if(!rotationEnabled)
         rotationEnabled = true;
+        audioSrc.Play();
 
     }
 
@@ -52,7 +55,6 @@ public class Card : MonoBehaviour
     {
         if (rotationEnabled)
         {
-             Debug.Log(transform.rotation.y);
             transform.Rotate(turnDirection, turnSpeed * Time.deltaTime);
             if (verifyStopRotation())
             {
