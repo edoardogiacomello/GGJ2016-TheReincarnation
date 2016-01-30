@@ -3,15 +3,18 @@ using System.Collections;
 
 public class Item : MonoBehaviour, IItem {
 
-    private float startingPosition;
+	private Vector3 startingPosition;
     private Ray ray;
     private Vector3 rayPoint;
 
-    private bool isItemOverCalduron = false;
-    private bool isItemOverOtherItems = false;
+	public bool isItemOverCalduron = false;
+	public bool isItemOverOtherItems = false;
 
     private GameObject itemCollided;
-    private 
+     
+	void Start(){
+		startingPosition = transform.position;
+	}
 
     /// <summary>
     /// Action performed when hovering the object
@@ -29,23 +32,27 @@ public class Item : MonoBehaviour, IItem {
         // TODO : remove hovering 
     }
 
-    /// <summary>
-    /// Action performed when the object is clicked
-    /// </summary>
-    void OnMouseDown()
-    {
-        startingPosition = Vector3.Distance(transform.position, Camera.main.transform.position);
-        GameManager.instance.isDragEnabled = true;
-        // save the object in the manager
-        GameManager.instance.currentDraggedItem = this;
-    }
+  
+	void OnMouseDrag(){
+		if(GameManager.instance.isDragEnabled){
+			float distance = Vector3.Distance(Camera.main.transform.position, startingPosition);
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Vector3 newPosition = new Vector3(ray.GetPoint(distance).x,ray.GetPoint(distance).y,0f);
+
+
+			transform.position = newPosition;
+		}
+			
+			
+	}
+
+
 
     /// <summary>
     /// Action performed when the mouse/finger is removed from the object
     /// </summary>
     void OnMouseUp()
     {
-        GameManager.instance.isDragEnabled = false;
         if (isItemOverCalduron)
         {
             gameObject.SetActive(false);
@@ -67,19 +74,14 @@ public class Item : MonoBehaviour, IItem {
         GameManager.instance.currentDraggedItem = null;
     }
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-
+  
     /// <summary>
     /// Checks if an item is colliding with the Calduron or other Items, setting the corresponding flag if true
     /// </summary>
     /// <param name="other"></param>
 
     void OnTriggerStay2D(Collider2D other) {
-
-        if (other.gameObject.tag.Equals("Calduron")) {
+		if (other.gameObject.tag.Equals("Calduron")) {
             isItemOverCalduron = true;
         }
         else if (other.gameObject.tag.Equals("Item")){
@@ -92,19 +94,6 @@ public class Item : MonoBehaviour, IItem {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
-
-        if (GameManager.instance.isDragEnabled)
-        {
-            // compute the ray with respect to the camera position
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            // get the vector of the distance
-            rayPoint = ray.GetPoint(startingPosition);
-            // set the new position of the object
-            transform.position = rayPoint;
-        }
-    }
 
 
 	public GameObject GameObject ()
@@ -118,6 +107,7 @@ public class Item : MonoBehaviour, IItem {
 
     public void ResetPosition() {
         // TODO reset position
+		transform.position = startingPosition;
     }
 
     

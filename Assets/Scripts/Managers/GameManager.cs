@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public bool IsDead(){
-		return (maxHealth<=0);
+		return (currentHealth<=0);
 	}
 
 	/// <summary>

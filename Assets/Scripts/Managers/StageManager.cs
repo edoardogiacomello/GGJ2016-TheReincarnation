@@ -56,9 +56,11 @@ public class StageManager : MonoBehaviour {
 	public void OnItemPlacement(IItem placedItem){
 		CancelInvoke ("OnStageTimeout");
 		if (placedItem.Equals(CurrentStage.requiredItem)){
+			Debug.Log("Right Item!");
 			//The player selected the right item for this stage. Succeeded
 			GameManager.instance.StageSucceded();
 		} else {
+			Debug.Log("Wrong Item!");
 			GameManager.instance.StageFailed();
 		}
 	}
