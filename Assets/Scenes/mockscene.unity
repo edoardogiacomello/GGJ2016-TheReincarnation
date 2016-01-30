@@ -353,6 +353,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1198370871}
   m_Script: {fileID: 11500000, guid: f68e551cfd53c1542a2564f62ac82d30, type: 3}
+--- !u!224 &428004761 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22410722, guid: 64db8aba51cd01a47b5dd43a05785951,
+    type: 2}
+  m_PrefabInternal: {fileID: 209711105}
 --- !u!1 &428352959
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,17 +404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df80f913008746b4b5a4e8567e885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suggestionTime: 2
 --- !u!114 &516403334 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0,
     type: 2}
   m_PrefabInternal: {fileID: 1658994904}
   m_Script: {fileID: 11500000, guid: 9dc4cf0b345552542af35efe1657cb5a, type: 3}
---- !u!224 &428004761 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 22410722, guid: 64db8aba51cd01a47b5dd43a05785951,
-    type: 2}
-  m_PrefabInternal: {fileID: 209711105}
 --- !u!1001 &516510445
 Prefab:
   m_ObjectHideFlags: 0
@@ -936,10 +937,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0359865c137ed949a1d774f08ff9dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combineSuccess: {fileID: 0}
-  combineFail: {fileID: 0}
-  itemDrop: {fileID: 0}
-  itemDrag: {fileID: 0}
+  combineSuccess: {fileID: 8300000, guid: beefcc7b6d08df448b70ab096596a211, type: 3}
+  combineFail: {fileID: 8300000, guid: dd5398bdbcbade449ba60b0f3aac134b, type: 3}
+  itemDrop: {fileID: 8300000, guid: 6966cd568f111b94aaea4f2cb6fa3b0d, type: 3}
+  itemDrag: {fileID: 8300000, guid: 8ef5b47b76027984ea2f240ca8a72296, type: 3}
 --- !u!114 &1118175882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1300,26 @@ Prefab:
       value: 
       objectReference: {fileID: 24308434, guid: 2e3505a8fea79974598fe567ab3ef402,
         type: 2}
+    - target: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: spiritIdle
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ef2ba7f9b66c854b93c4be1dea8391b, type: 3}
+    - target: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: spiritVanishing
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ad118df087bd0c48923f791e433cffc, type: 3}
+    - target: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: spiritDying
+      value: 
+      objectReference: {fileID: 8300000, guid: 49f04379b9e8d6640b273f76ae3efd8c, type: 3}
+    - target: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: spiritRegain
+      value: 
+      objectReference: {fileID: 8300000, guid: 81bd853c0c11ab541a6727a60fd8ba4d, type: 3}
+    - target: {fileID: 11441330, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: spiritTransformation
+      value: 
+      objectReference: {fileID: 8300000, guid: 17953caca98e07f47b6952c44ae5197c, type: 3}
     m_RemovedComponents:
     - {fileID: 11499160, guid: f59679119679dde48b609c103a1baaf0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f59679119679dde48b609c103a1baaf0, type: 2}
@@ -1408,6 +1429,10 @@ Prefab:
       propertyPath: requiredItem
       value: 
       objectReference: {fileID: 290197763}
+    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
+      propertyPath: spirit
+      value: 
+      objectReference: {fileID: 516403333}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
   m_IsPrefabParent: 0

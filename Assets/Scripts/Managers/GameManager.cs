@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 	public StageManager stageManager;
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
+	public Spirit spirit;
 
     //Game Variables
     public int maxHealth;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnGameStart(){
+		spirit.Idle();
 		stageManager.StartNextStage();
 	}
 
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour {
 	public void StageFailed(){
 		EnableDrag(false);
 		currentHealth -= healthLossOnStageFailure;
+		spirit.LoseHealth();
 		if(!IsDead()) {
 			stageManager.StartNextStage();
 		} else {
@@ -66,6 +69,7 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	public void StageSucceded(){
 		EnableDrag(false);
+		spirit.RegainHealth();
 		stageManager.StartNextStage();
 	}
 
@@ -79,11 +83,13 @@ public class GameManager : MonoBehaviour {
 	public void GameFinished(){
 		//Note that if the game finishes, then there are no more stage to accompish, so the game is won.
 		EnableDrag(false);
+		spirit.Trasnformation();
 		Debug.Log("You have won the game");
 	}
 
 	public void GameLost(){
 		EnableDrag(false);
+		spirit.Die();
 		Debug.Log("You have lost the game");
 	}
 

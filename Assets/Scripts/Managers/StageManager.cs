@@ -45,6 +45,7 @@ public class StageManager : MonoBehaviour {
 		//TODO: implement this
 		//TODO: Show suggestion
 		//Enabling dragging of items on gameManager
+		GameManager.instance.spirit.ShowSuggestion(stage.suggestion);
 		GameManager.instance.isDragEnabled = true;
 		//TODO: Dragging Phase 
 

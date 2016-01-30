@@ -13,6 +13,10 @@ public class Item : MonoBehaviour, IItem {
 	public bool isItemOverOtherItems = false;
 
     private IItem itemCollided;
+	/// <summary>
+	/// This variable tells if the drag sound is already been played
+	/// </summary>
+	private bool alreadySounded;
     
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
@@ -44,9 +48,10 @@ public class Item : MonoBehaviour, IItem {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			Vector3 newPosition = new Vector3(ray.GetPoint(distance).x,ray.GetPoint(distance).y,0f);
 			transform.position = newPosition;
+
+			if (!alreadySounded) PlayDragSound();
 		}
-			
-		if (!audioSource.isPlaying) PlayDragSound(true);
+	
 	}
 
 
@@ -56,7 +61,7 @@ public class Item : MonoBehaviour, IItem {
     /// </summary>
     void OnMouseUp()
     {
-		PlayDragSound(false);
+		alreadySounded = false;
         if (isItemOverCalduron)
         {
             gameObject.SetActive(false);
@@ -130,18 +135,11 @@ public class Item : MonoBehaviour, IItem {
 
     
 	/// <summary>
-	/// Starts or Stops the item drag sound
+	/// Starts the item drag sound
 	/// </summary>
-	/// <param name="play">If set to <c>true</c> starts playing, stops otherwise</param>
-	void PlayDragSound(bool play){
-		audioSource.clip = GameManager.instance.globalSoundManager.itemSoundManager.itemDrag;
-		if(play){
-			audioSource.loop =true;
-			audioSource.Play();
-		} else {
-			audioSource.loop = false;
-			audioSource.Stop();
-		}
+	void PlayDragSound(){
+		alreadySounded = true;
+		audioSource.PlayOneShot(GameManager.instance.globalSoundManager.itemSoundManager.itemDrag);
 	}
 
 	/// <summary>
