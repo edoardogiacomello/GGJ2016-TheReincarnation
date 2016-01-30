@@ -65,10 +65,10 @@ public class StageManager : MonoBehaviour {
 
 	public void OnStageTimeout(){
 			if (GameManager.instance.currentDraggedItem != null){
-				//The player is dragging an item
-			Debug.Log("Repositioning Item");
+            //The player is dragging an item
+            Debug.Log("Repositioning Item");
 				//TODO: Call the function to reposition the item
-				//GameManager.instance.currentDraggedItem.ResetPosition();
+				GameManager.instance.currentDraggedItem.ResetPosition();
 			} 
 		GameManager.instance.OnStageTimeOut(CurrentStage);
 	}

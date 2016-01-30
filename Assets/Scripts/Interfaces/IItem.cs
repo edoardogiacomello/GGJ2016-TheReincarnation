@@ -2,4 +2,6 @@
 using System.Collections;
 
 public interface IItem: IObject {
+
+    void ResetPosition();
 }

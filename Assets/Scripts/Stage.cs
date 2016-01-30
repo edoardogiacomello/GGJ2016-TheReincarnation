@@ -17,7 +17,7 @@ public class Stage : MonoBehaviour {
 	/// <summary>
 	/// The required item.
 	/// </summary>
-	public IItem requiredItem;
+	public Item requiredItem;
 
 	public bool isLost;
 	public bool isFinished;
