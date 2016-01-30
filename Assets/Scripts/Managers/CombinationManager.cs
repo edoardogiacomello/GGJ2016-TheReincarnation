@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class CombinationManager : MonoBehaviour {
-	public Combination[] combinations;
+	private Combination[] combinations;
+
+	void Awake(){
+		combinations = GetComponents<Combination>();
+	}
 
 	/// <summary>
 	/// Combine the specified firstItem and secondItem, or returns NULL if no combination is found

@@ -9,9 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 490668}
   - 114: {fileID: 11414132}
-  - 114: {fileID: 11408916}
-  - 114: {fileID: 11483110}
-  - 114: {fileID: 11487330}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26,23 +23,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9501953, y: -0.7373047, z: 1.1464844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11408916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac7573fca55b0f4183f38e7995b72df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combinations: []
 --- !u!114 &11414132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,44 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706819cf02139cb48ba2cc1c2c05acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageManager: {fileID: 11483110}
-  combinationManager: {fileID: 11408916}
+  stageManager: {fileID: 0}
+  combinationManager: {fileID: 0}
   maxHealth: 2
   currentHealth: 0
   healthLossOnStageFailure: 1
   isDragEnabled: 0
---- !u!114 &11483110
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae28d3fea063a14cbb8c1746ee159f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stages:
-  - {fileID: 11487330}
-  - {fileID: 11487330}
-  - {fileID: 11487330}
-  currentStageIndex: 0
---- !u!114 &11487330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3e1cf0c2087a142ac2c10773e550cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 5
-  suggestion: {fileID: 0}
-  requiredItem: {fileID: 0}
-  isLost: 0
-  isFinished: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
