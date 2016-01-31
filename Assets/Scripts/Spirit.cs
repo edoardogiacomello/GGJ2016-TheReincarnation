@@ -28,7 +28,8 @@ public class Spirit : MonoBehaviour {
 
 	public void ShowSuggestion(Suggestion suggestion){
         //TODO: Insert a canvas and show the suggestion on the baloon
-        currentSuggestion = suggestion;
+		HideSuggestion();
+		currentSuggestion = suggestion;
         oldPosition = suggestion.transform;
         suggestion.transform.position = new Vector3(-3, -4, suggestion.transform.position.z);
        // Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
@@ -37,6 +38,7 @@ public class Spirit : MonoBehaviour {
 
 	public void HideSuggestion(){
         //TODO: Hide the suggestion baloon
+		if (currentSuggestion == null) return;
         currentSuggestion.gameObject.SetActive(false);
 	}
 
