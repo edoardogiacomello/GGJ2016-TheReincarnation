@@ -6,7 +6,6 @@ public class Card : MonoBehaviour
     public float moveSpeed = 10f;
     public float turnSpeed = 200f;
     bool rotationEnabled = false;
-    bool cardRevelead = false;
     Vector3 turnDirection;
 
 
@@ -35,8 +34,9 @@ public class Card : MonoBehaviour
         if (turnDirection == Vector3.up) {
             if (transform.rotation.y >= 0.98f)
             {
-                return true;
                 transform.rotation = cardRevelaedRotation;
+                return true;
+                
             }
             else { return false; }
         }
@@ -44,8 +44,9 @@ public class Card : MonoBehaviour
         {
             if (transform.rotation.y <= 0.0f)
             {
-                return true;
                 transform.rotation = cardHiddenRotation;
+                return true;
+                
             }
             else { return false; }
         }
