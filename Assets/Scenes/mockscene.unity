@@ -737,7 +737,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8eeef67052a86094fad2ed6b7f6e955a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee01f50e82caca940ad5bae2a310cc14, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1109,6 +1109,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 312509280}
+  - {fileID: 1998935909}
   m_Father: {fileID: 782360164}
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0}
@@ -2005,7 +2006,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1b395ccaa72f62a4bbcd36839d285330, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fb29bfee8f07a44eac3b9205eab48d9, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4575,6 +4576,10 @@ Prefab:
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 312509281}
+    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
+      propertyPath: startButtonManager
+      value: 
+      objectReference: {fileID: 1998935911}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
   m_IsPrefabParent: 0
@@ -4986,6 +4991,79 @@ Prefab:
     - {fileID: 6572914, guid: b76f8b84a9e6f1c46a3d0d7b8b54208d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b76f8b84a9e6f1c46a3d0d7b8b54208d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1998935908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1998935909}
+  - 212: {fileID: 1998935910}
+  - 114: {fileID: 1998935911}
+  m_Layer: 5
+  m_Name: start!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998935909
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998935908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 1, z: -3345.6748}
+  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_Children: []
+  m_Father: {fileID: 428004761}
+  m_RootOrder: 1
+--- !u!212 &1998935910
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998935908}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1864494223
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e3b36390ae291c54f82fb49a22faa6b0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!114 &1998935911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998935908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586f937cfb2b0d8498cd3e00920bfec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1998935910}
+  startIcon: {fileID: 21300000, guid: e3b36390ae291c54f82fb49a22faa6b0, type: 3}
+  hourglassIcon: {fileID: 21300000, guid: 52001e098fe9c194189e0c340ca7c508, type: 3}
 --- !u!1001 &1999377245
 Prefab:
   m_ObjectHideFlags: 0
@@ -5235,7 +5313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestIcon: {fileID: 2036623245}
-  enabled: 1
 --- !u!1 &2061982963
 GameObject:
   m_ObjectHideFlags: 0
