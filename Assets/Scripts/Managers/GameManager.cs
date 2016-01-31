@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ProgressBar;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
@@ -115,10 +116,13 @@ public class GameManager : MonoBehaviour {
 		EnableDrag(false);
 		Debug.Log("You have won the game");
         youWinLabel.SetActive(true);
-        new WaitForSeconds(3);
+        Time.timeScale = 0;
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void MetodoNormale() {
+        
+    }
 	public void GameLost(){
 		EnableDrag(false);
 		spirit.Die();
