@@ -64,9 +64,11 @@ public class Item : MonoBehaviour, IItem {
 		alreadySounded = false;
         if (isItemOverCalduron)
         {
-            gameObject.SetActive(false);
+			Debug.Log("Placed an item over the coffer");
             GameManager.instance.stageManager.OnItemPlacement(this);
-            // TODO move the object outside the scene
+			GameManager.instance.buttonManager.setItem(null);
+			// TODO move the object outside the scene
+			gameObject.SetActive(false);
         }
         else if (isItemOverOtherItems)
         {
@@ -77,7 +79,7 @@ public class Item : MonoBehaviour, IItem {
                 gameObject.SetActive(false);
                 itemCollided.GameObject().SetActive(false);
 				PlayCombinationSuccessSound();
-                // TODO insert combined object in the middle circle
+				GameManager.instance.buttonManager.setItem(sumOfItem);
             }
             else {
                 GameManager.instance.WrongCombination();

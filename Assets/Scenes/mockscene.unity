@@ -2210,6 +2210,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11437012, guid: f59679119679dde48b609c103a1baaf0, type: 2}
+      propertyPath: suggestionTime
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11421396, guid: f59679119679dde48b609c103a1baaf0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f59679119679dde48b609c103a1baaf0, type: 2}
@@ -4357,11 +4361,11 @@ Prefab:
       objectReference: {fileID: 1298638327}
     - target: {fileID: 11455966, guid: 4920a16e7e3191c408f42ea3ccf58e4e, type: 2}
       propertyPath: maxTime
-      value: 8
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11409776, guid: 4920a16e7e3191c408f42ea3ccf58e4e, type: 2}
       propertyPath: maxTime
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11409776, guid: 4920a16e7e3191c408f42ea3ccf58e4e, type: 2}
       propertyPath: suggestion
@@ -4389,7 +4393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3e1cf0c2087a142ac2c10773e550cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 8
+  maxTime: 15
   suggestion: {fileID: 1927106104}
   requiredItem: {fileID: 218752099}
 --- !u!114 &1770136151
@@ -4403,7 +4407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3e1cf0c2087a142ac2c10773e550cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 8
+  maxTime: 13
   suggestion: {fileID: 1727907996}
   requiredItem: {fileID: 1359199651}
 --- !u!1001 &1778027430
@@ -4567,6 +4571,10 @@ Prefab:
       propertyPath: spirit
       value: 
       objectReference: {fileID: 516403333}
+    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
+      propertyPath: buttonManager
+      value: 
+      objectReference: {fileID: 2036623246}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
   m_IsPrefabParent: 0
@@ -4944,7 +4952,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114072, guid: b76f8b84a9e6f1c46a3d0d7b8b54208d, type: 2}
       propertyPath: m_TagString
-      value: Calduron
+      value: Coffer
       objectReference: {fileID: 0}
     - target: {fileID: 423564, guid: b76f8b84a9e6f1c46a3d0d7b8b54208d, type: 2}
       propertyPath: m_LocalScale.z
@@ -5165,6 +5173,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2036623244}
   - 212: {fileID: 2036623245}
+  - 114: {fileID: 2036623246}
   m_Layer: 5
   m_Name: CloudTreasure
   m_TagString: Untagged
@@ -5214,6 +5223,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &2036623246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036623243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76de6880efff58a4fa519b82190e6328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestIcon: {fileID: 2036623245}
+  enabled: 1
 --- !u!1 &2061982963
 GameObject:
   m_ObjectHideFlags: 0

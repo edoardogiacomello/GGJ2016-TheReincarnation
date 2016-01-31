@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Item
   - Coffer
-  - Calduron
   layers:
   - Default
   - TransparentFX

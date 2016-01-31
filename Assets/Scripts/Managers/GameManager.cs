@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour {
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
 	public Spirit spirit;	
+
+	//GUI reference
+	public GuiCentralButtonManager buttonManager;
+
  	//Progress Bar
     public ProgressRadialBehaviour progressBar;	
 

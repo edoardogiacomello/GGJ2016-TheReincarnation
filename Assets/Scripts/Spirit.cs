@@ -31,7 +31,7 @@ public class Spirit : MonoBehaviour {
         currentSuggestion = suggestion;
         oldPosition = suggestion.transform;
         suggestion.transform.position = new Vector3(-3, -4, suggestion.transform.position.z);
-        Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
+       // Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
 		Invoke("HideSuggestion", suggestionTime);
 	}
 
