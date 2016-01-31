@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ProgressBar;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour {
 	//GUI reference
 	public GuiCentralButtonManager buttonManager;
     public GuiStartButtonManager startButtonManager;
+    public GameObject youWinLabel;
+    public GameObject youLoseLabel;
 
  	//Progress Bar
     public ProgressRadialBehaviour progressBar;	
@@ -110,13 +113,19 @@ public class GameManager : MonoBehaviour {
 		//Note that if the game finishes, then there are no more stage to accompish, so the game is won.
 		EnableDrag(false);
 		Debug.Log("You have won the game");
-	}
+        youWinLabel.SetActive(true);
+        new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
+    }
 
 	public void GameLost(){
 		EnableDrag(false);
 		spirit.Die();
 		Debug.Log("You have lost the game");
-	}
+        youLoseLabel.SetActive(true);
+        new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
+    }
 
 	void EnableDrag(bool isEnabled){
 		GameManager.instance.isDragEnabled = isEnabled;
