@@ -58,8 +58,10 @@ public class GameManager : MonoBehaviour {
 		EnableDrag(false);
 		currentHealth -= healthLossOnStageFailure;
 		spirit.LoseHealth();
+		spirit.Trasnformation();
 		if(!IsDead()) {
 			stageManager.StartNextStage();
+
 		} else {
 			GameLost();
 		}
@@ -84,7 +86,6 @@ public class GameManager : MonoBehaviour {
 	public void GameFinished(){
 		//Note that if the game finishes, then there are no more stage to accompish, so the game is won.
 		EnableDrag(false);
-		spirit.Trasnformation();
 		Debug.Log("You have won the game");
 	}
 
