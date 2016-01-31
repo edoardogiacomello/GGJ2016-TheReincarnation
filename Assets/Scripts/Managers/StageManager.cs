@@ -65,10 +65,14 @@ public class StageManager : MonoBehaviour {
 		if (placedItem.Equals(CurrentStage.requiredItem)){
 			Debug.Log("Right Item!");
 			//The player selected the right item for this stage. Succeeded
+			placedItem.GameObject().SetActive(false);
 			GameManager.instance.StageSucceded();
 		} else {
 			Debug.Log("Wrong Item!");
-			GameManager.instance.StageFailed();
+
+			GameManager.instance.DropHealth();
+			GameManager.instance.isDragEnabled = true;
+			placedItem.ResetPosition();
 		}
 	}
 

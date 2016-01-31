@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour {
     public ProgressRadialBehaviour progressBar;	
 
     //Game Variables
-    public int maxHealth;
+	public int maxHealth = 6;
+	public int startingHealth = 3;
 	public int currentHealth;
-	public int healthLossOnStageFailure;
+	public int healthLossOnStageFailure = 1;
 
 
 	//Item Drag Variables
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		currentHealth = maxHealth;
+		currentHealth = startingHealth;
 		if (stageManager == null) Debug.Log("Warning: please attach a StageManager component to the GameManager object");
 
 		//Starting the background music
@@ -65,11 +66,24 @@ public class GameManager : MonoBehaviour {
 		spirit.Trasnformation();
 		if(!IsDead()) {
 			stageManager.StartNextStage();
-
 		} else {
 			GameLost();
 		}
 	}
+
+	/// <summary>
+	/// It's like StageFailed but does not skip to the next stage
+	/// </summary>
+	public void DropHealth(){
+		EnableDrag(false);
+		currentHealth -= healthLossOnStageFailure;
+		spirit.LoseHealth();
+		spirit.Trasnformation();
+		if(IsDead()) {
+			GameLost();
+		}
+	}
+	
 
 	/// <summary>
 	/// Called when the current Stage is Passed
@@ -77,6 +91,7 @@ public class GameManager : MonoBehaviour {
 	public void StageSucceded(){
 		EnableDrag(false);
 		currentHealth += healthLossOnStageFailure;
+		if (currentHealth > maxHealth) currentHealth = maxHealth;
 		spirit.RegainHealth();
 		spirit.Trasnformation();
 		stageManager.StartNextStage();

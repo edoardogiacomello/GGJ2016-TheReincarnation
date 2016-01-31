@@ -43,8 +43,10 @@ MonoBehaviour:
   combinationManager: {fileID: 0}
   globalSoundManager: {fileID: 0}
   spirit: {fileID: 0}
+  buttonManager: {fileID: 0}
   progressBar: {fileID: 0}
-  maxHealth: 3
+  maxHealth: 6
+  startingHealth: 3
   currentHealth: 0
   healthLossOnStageFailure: 1
   isDragEnabled: 0

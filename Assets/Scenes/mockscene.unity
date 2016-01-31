@@ -4564,10 +4564,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1118175880}
     - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
-      propertyPath: progressBar
-      value: 
-      objectReference: {fileID: 312509281}
-    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
       propertyPath: spirit
       value: 
       objectReference: {fileID: 516403333}
@@ -4575,6 +4571,10 @@ Prefab:
       propertyPath: buttonManager
       value: 
       objectReference: {fileID: 2036623246}
+    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
+      propertyPath: progressBar
+      value: 
+      objectReference: {fileID: 312509281}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
   m_IsPrefabParent: 0

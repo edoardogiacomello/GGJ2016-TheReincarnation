@@ -72,7 +72,6 @@ public class Item : MonoBehaviour, IItem {
             GameManager.instance.stageManager.OnItemPlacement(this);
 			GameManager.instance.buttonManager.setItem(null);
 			// TODO move the object outside the scene
-			gameObject.SetActive(false);
 			return;
         }
 		else if (itemsTriggered.Count > 0)
