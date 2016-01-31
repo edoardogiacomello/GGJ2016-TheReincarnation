@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GuiCentralButtonManager : MonoBehaviour {
 	public SpriteRenderer chestIcon;
-	public bool enabled = true;
+	
 
 	// Use this for initialization
 	void Start () {

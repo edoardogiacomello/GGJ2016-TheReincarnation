@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
 	//GUI reference
 	public GuiCentralButtonManager buttonManager;
+    public GuiStartButtonManager startButtonManager;
 
  	//Progress Bar
     public ProgressRadialBehaviour progressBar;	
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour {
 
 	public void OnGameStart(){
 		spirit.Idle();
+        startButtonManager.changeIcon();
 		stageManager.StartNextStage();
 	}
 
