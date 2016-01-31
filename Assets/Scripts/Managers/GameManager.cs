@@ -116,20 +116,20 @@ public class GameManager : MonoBehaviour {
 		EnableDrag(false);
 		Debug.Log("You have won the game");
         youWinLabel.SetActive(true);
-        Time.timeScale = 0;
-        SceneManager.LoadScene("MainMenu");
+        Invoke("MetodoNormale", 3);
+        
     }
 
     public void MetodoNormale() {
-        
+        SceneManager.LoadScene("MainMenu");
     }
+
 	public void GameLost(){
 		EnableDrag(false);
 		spirit.Die();
 		Debug.Log("You have lost the game");
         youLoseLabel.SetActive(true);
-        new WaitForSeconds(3);
-        SceneManager.LoadScene("MainMenu");
+        Invoke("MetodoNormale", 3);
     }
 
 	void EnableDrag(bool isEnabled){
