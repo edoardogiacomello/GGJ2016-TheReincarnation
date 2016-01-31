@@ -18,7 +18,7 @@ public class Spirit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Trasnformation();
+		
 	}
 	
 	// Update is called once per frame
@@ -57,15 +57,15 @@ public class Spirit : MonoBehaviour {
 		int currentHealth = GameManager.instance.currentHealth;
 		if(currentHealth <= lowTransformationHealthThreshold){
 			//Low
-			Debug.Log("The spirit is going away");
+			Debug.Log("The spirit now Small");
 			TransformLow();
 		} else if (currentHealth <= hiTransformationHealthThreshold){
 			//Medium
-			Debug.Log("The spirit is normal");
+			Debug.Log("The spirit is Teen");
 			TransformMedium();
 		} else {
 			//High
-			Debug.Log("The spirit is almost reincarnating");
+			Debug.Log("The spirit is Adult");
 			TransformHi();
 		}
 	}
