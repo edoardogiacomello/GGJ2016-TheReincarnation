@@ -9,6 +9,8 @@ public class Spirit : MonoBehaviour {
 	public GameObject lowForm;
 	public GameObject mediumForm;
 	public GameObject hiForm;
+    public Transform oldPosition;
+    private Suggestion currentSuggestion;
 
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
@@ -25,12 +27,17 @@ public class Spirit : MonoBehaviour {
 	}
 
 	public void ShowSuggestion(Suggestion suggestion){
-		//TODO: Insert a canvas and show the suggestion on the baloon
+        //TODO: Insert a canvas and show the suggestion on the baloon
+        currentSuggestion = suggestion;
+        oldPosition = suggestion.transform;
+        suggestion.transform.position = new Vector3(-3, -4, suggestion.transform.position.z);
+        Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
 		Invoke("HideSuggestion", suggestionTime);
 	}
 
 	public void HideSuggestion(){
-		//TODO: Hide the suggestion baloon
+        //TODO: Hide the suggestion baloon
+        currentSuggestion.gameObject.SetActive(false);
 	}
 
 	public void RegainHealth(){

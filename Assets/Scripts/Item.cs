@@ -77,6 +77,7 @@ public class Item : MonoBehaviour, IItem {
                 gameObject.SetActive(false);
                 itemCollided.GameObject().SetActive(false);
 				PlayCombinationSuccessSound();
+                // TODO insert combined object in the middle circle
             }
             else {
                 GameManager.instance.WrongCombination();
