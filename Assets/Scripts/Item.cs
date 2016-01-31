@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Item : MonoBehaviour, IItem {
 
@@ -12,7 +13,9 @@ public class Item : MonoBehaviour, IItem {
 	public bool isItemOverCalduron = false;
 	public bool isItemOverOtherItems = false;
 
-    private IItem itemCollided;
+	private List<IItem> itemsTriggered;
+
+    //private IItem itemCollided;
 	/// <summary>
 	/// This variable tells if the drag sound is already been played
 	/// </summary>
@@ -20,6 +23,7 @@ public class Item : MonoBehaviour, IItem {
     
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
+		itemsTriggered = new List<IItem>();
 	}
 	void Start(){
 		startingPosition = transform.position;
@@ -64,27 +68,32 @@ public class Item : MonoBehaviour, IItem {
 		alreadySounded = false;
         if (isItemOverCalduron)
         {
-            gameObject.SetActive(false);
+			Debug.Log("Placed an item over the coffer");
             GameManager.instance.stageManager.OnItemPlacement(this);
-            // TODO move the object outside the scene
+			GameManager.instance.buttonManager.setItem(null);
+			// TODO move the object outside the scene
+			return;
         }
-        else if (isItemOverOtherItems)
+		else if (itemsTriggered.Count > 0)
         {
-            IItem sumOfItem = GameManager.instance.combinationManager.Combine(this, itemCollided);
-            if (sumOfItem != null)
-            {
-                // both items exists, disable them
-                gameObject.SetActive(false);
-                itemCollided.GameObject().SetActive(false);
-				PlayCombinationSuccessSound();
-            }
-            else {
-                GameManager.instance.WrongCombination();
-                ResetPosition();
+			foreach (IItem i in itemsTriggered){
+
+				IItem sumOfItem = GameManager.instance.combinationManager.Combine(this, i);
+				if (sumOfItem != null)
+				{
+					// both items exists, disable them
+					gameObject.SetActive(false);
+					i.GameObject().SetActive(false);
+					PlayCombinationSuccessSound();
+					GameManager.instance.buttonManager.setItem(sumOfItem);
+					return;
+				}
+			}
+
+				GameManager.instance.WrongCombination();
+				ResetPosition();
 				PlayCombinationFailedSound();
-            }
-            
-            
+
             
             // TODO move both objects outside the scene (using itemCollided for the other one)
 
@@ -99,25 +108,39 @@ public class Item : MonoBehaviour, IItem {
     }
 
   
+
+
+
     /// <summary>
     /// Checks if an item is colliding with the Calduron or other Items, setting the corresponding flag if true
     /// </summary>
     /// <param name="other"></param>
-
     void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Coffer")) {
             isItemOverCalduron = true;
         }
-        else if (other.gameObject.tag.Equals("Item")){
-            isItemOverOtherItems = true;
-            // save the game object reference to remove the item from the scene
-            itemCollided = other.gameObject.GetComponent<Item>();
-        } else {
+        else {
             isItemOverCalduron = false;
             isItemOverOtherItems = false;
         }
     }
 
+
+	void OnTriggerEnter2D(Collider2D collider){
+		IItem item = collider.gameObject.GetComponent<IItem>();
+		if (item != null){
+			//we are hovering an item
+			itemsTriggered.Add(item);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider){
+		IItem item = collider.gameObject.GetComponent<IItem>();
+		if (item != null){
+			//we are leaving an item collider
+			itemsTriggered.Remove(item);
+		}
+	}
 
 
 	public GameObject GameObject ()

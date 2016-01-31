@@ -44,6 +44,7 @@ public class StageManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="stage">Stage.</param>
 	private void StartStage(Stage stage){
+		GameManager.instance.spirit.Trasnformation();
 		//TODO: implement this
 		//TODO: Show suggestion
 		//Enabling dragging of items on gameManager
@@ -61,13 +62,18 @@ public class StageManager : MonoBehaviour {
 	/// </summary>
 	public void OnItemPlacement(IItem placedItem){
 		CancelInvoke ("OnStageTimeout");
+		Debug.Log("Item Placed");
 		if (placedItem.Equals(CurrentStage.requiredItem)){
 			Debug.Log("Right Item!");
 			//The player selected the right item for this stage. Succeeded
+			placedItem.GameObject().SetActive(false);
 			GameManager.instance.StageSucceded();
 		} else {
 			Debug.Log("Wrong Item!");
-			GameManager.instance.StageFailed();
+
+			GameManager.instance.DropHealth();
+			GameManager.instance.isDragEnabled = true;
+			placedItem.ResetPosition();
 		}
 	}
 

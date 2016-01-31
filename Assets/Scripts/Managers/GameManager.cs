@@ -1,20 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ProgressBar;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public StageManager stageManager;
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
-	public Spirit spirit;	
+	public Spirit spirit;
+
+
+	//GUI reference
+	public GuiCentralButtonManager buttonManager;
+    public GuiStartButtonManager startButtonManager;
+	public Transform suggestionButton;
+    public GameObject youWinLabel;
+    public GameObject youLoseLabel;
+
  	//Progress Bar
     public ProgressRadialBehaviour progressBar;	
 
     //Game Variables
-    public int maxHealth;
+	public int maxHealth = 6;
+	public int startingHealth = 3;
 	public int currentHealth;
-	public int healthLossOnStageFailure;
+	public int healthLossOnStageFailure = 1;
 
 
 	//Item Drag Variables
@@ -30,7 +41,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		currentHealth = maxHealth;
+		currentHealth = startingHealth;
 		if (stageManager == null) Debug.Log("Warning: please attach a StageManager component to the GameManager object");
 
 		//Starting the background music
@@ -39,6 +50,7 @@ public class GameManager : MonoBehaviour {
 
 	public void OnGameStart(){
 		spirit.Idle();
+        startButtonManager.changeIcon();
 		stageManager.StartNextStage();
 	}
 
@@ -61,18 +73,34 @@ public class GameManager : MonoBehaviour {
 		spirit.Trasnformation();
 		if(!IsDead()) {
 			stageManager.StartNextStage();
-
 		} else {
 			GameLost();
 		}
 	}
 
 	/// <summary>
+	/// It's like StageFailed but does not skip to the next stage
+	/// </summary>
+	public void DropHealth(){
+		EnableDrag(false);
+		currentHealth -= healthLossOnStageFailure;
+		spirit.LoseHealth();
+		spirit.Trasnformation();
+		if(IsDead()) {
+			GameLost();
+		}
+	}
+	
+
+	/// <summary>
 	/// Called when the current Stage is Passed
 	/// </summary>
 	public void StageSucceded(){
 		EnableDrag(false);
+		currentHealth += healthLossOnStageFailure;
+		if (currentHealth > maxHealth) currentHealth = maxHealth;
 		spirit.RegainHealth();
+		spirit.Trasnformation();
 		stageManager.StartNextStage();
 	}
 
@@ -87,13 +115,22 @@ public class GameManager : MonoBehaviour {
 		//Note that if the game finishes, then there are no more stage to accompish, so the game is won.
 		EnableDrag(false);
 		Debug.Log("You have won the game");
-	}
+        youWinLabel.SetActive(true);
+        Invoke("MetodoNormale", 3);
+        
+    }
+
+    public void MetodoNormale() {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 	public void GameLost(){
 		EnableDrag(false);
 		spirit.Die();
 		Debug.Log("You have lost the game");
-	}
+        youLoseLabel.SetActive(true);
+        Invoke("MetodoNormale", 3);
+    }
 
 	void EnableDrag(bool isEnabled){
 		GameManager.instance.isDragEnabled = isEnabled;

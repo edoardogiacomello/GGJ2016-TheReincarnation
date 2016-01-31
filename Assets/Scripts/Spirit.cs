@@ -6,6 +6,11 @@ public class Spirit : MonoBehaviour {
 	public float suggestionTime = 2f;
 	public int hiTransformationHealthThreshold = 4;
 	public int lowTransformationHealthThreshold = 2;
+	public GameObject lowForm;
+	public GameObject mediumForm;
+	public GameObject hiForm;
+    public Transform oldPosition;
+    private Suggestion currentSuggestion;
 
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
@@ -13,7 +18,7 @@ public class Spirit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -22,12 +27,18 @@ public class Spirit : MonoBehaviour {
 	}
 
 	public void ShowSuggestion(Suggestion suggestion){
-		//TODO: Insert a canvas and show the suggestion on the baloon
+        //TODO: Insert a canvas and show the suggestion on the baloon
+		HideSuggestion();
+		currentSuggestion = suggestion;
+        oldPosition = suggestion.transform;
+		suggestion.transform.position = GameManager.instance.suggestionButton.position;
+       // Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
 		Invoke("HideSuggestion", suggestionTime);
 	}
 
 	public void HideSuggestion(){
-		//TODO: Hide the suggestion baloon
+		if (currentSuggestion == null) return;
+        currentSuggestion.gameObject.SetActive(false);
 	}
 
 	public void RegainHealth(){
@@ -46,32 +57,45 @@ public class Spirit : MonoBehaviour {
 		int currentHealth = GameManager.instance.currentHealth;
 		if(currentHealth <= lowTransformationHealthThreshold){
 			//Low
-			Debug.Log("The spirit is going away");
+			Debug.Log("The spirit now Small");
+			TransformLow();
 		} else if (currentHealth <= hiTransformationHealthThreshold){
 			//Medium
-			Debug.Log("The spirit is normal");
+			Debug.Log("The spirit is Teen");
+			TransformMedium();
 		} else {
 			//High
-			Debug.Log("The spirit is almost reincarnating");
+			Debug.Log("The spirit is Adult");
+			TransformHi();
 		}
 	}
 
 
 	private void TransformHi(){
-		//TODO: implement this
+		lowForm.SetActive(false);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(true);
+
 	}
 	private void TransformMedium(){
-		//TODO: implement this
+		lowForm.SetActive(false);
+		mediumForm.SetActive(true);
+		hiForm.SetActive(false);
 	}
 
 	private void TransformLow(){
-		//TODO: implement this
+		lowForm.SetActive(true);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(false);
 	}
 
 
 
 	public void Die(){
-		Debug.Log("The spirit has left us");	
+		Debug.Log("The spirit has left us");
+		lowForm.SetActive(false);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(false);
 	}
 
 	public void PlayRegainHealthSound(){

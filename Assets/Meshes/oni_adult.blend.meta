@@ -22,6 +22,8 @@ ModelImporter:
     100028: oni_adult_002_pSphere7
     100030: oni_adult_002_pSphere8
     100032: oni_adult_002_pTorus1
+    100034: OCCHI
+    100036: props
     400000: Mutanda1_body
     400002: Mutanda1_eye
     400004: Mutanda1_eye1
@@ -39,6 +41,8 @@ ModelImporter:
     400028: oni_adult_002_pSphere7
     400030: oni_adult_002_pSphere8
     400032: oni_adult_002_pTorus1
+    400034: OCCHI
+    400036: props
     2300000: Mutanda1_body
     2300002: Mutanda1_eye
     2300004: Mutanda1_eye1
@@ -54,6 +58,8 @@ ModelImporter:
     2300024: oni_adult_002_pSphere7
     2300026: oni_adult_002_pSphere8
     2300028: oni_adult_002_pTorus1
+    2300030: OCCHI
+    2300032: props
     3300000: Mutanda1_body
     3300002: Mutanda1_eye
     3300004: Mutanda1_eye1
@@ -69,6 +75,8 @@ ModelImporter:
     3300024: oni_adult_002_pSphere7
     3300026: oni_adult_002_pSphere8
     3300028: oni_adult_002_pTorus1
+    3300030: OCCHI
+    3300032: props
     4300000: oni_adult_002_pTorus1
     4300002: Mutanda1_Mesh
     4300004: oni_adult_002_pSphere8
@@ -84,6 +92,8 @@ ModelImporter:
     4300024: oni_adult_002_pSphere4
     4300026: oni_adult_002_pSphere5
     4300028: oni_adult_002_pSphere6
+    4300030: props
+    4300032: OCCHI
     7400000: Default Take
     9500000: //RootNode
   materials:
