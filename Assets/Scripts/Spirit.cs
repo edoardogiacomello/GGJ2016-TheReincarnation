@@ -6,6 +6,9 @@ public class Spirit : MonoBehaviour {
 	public float suggestionTime = 2f;
 	public int hiTransformationHealthThreshold = 4;
 	public int lowTransformationHealthThreshold = 2;
+	public GameObject lowForm;
+	public GameObject mediumForm;
+	public GameObject hiForm;
 
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
@@ -13,7 +16,7 @@ public class Spirit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Trasnformation();
 	}
 	
 	// Update is called once per frame
@@ -47,31 +50,44 @@ public class Spirit : MonoBehaviour {
 		if(currentHealth <= lowTransformationHealthThreshold){
 			//Low
 			Debug.Log("The spirit is going away");
+			TransformLow();
 		} else if (currentHealth <= hiTransformationHealthThreshold){
 			//Medium
 			Debug.Log("The spirit is normal");
+			TransformMedium();
 		} else {
 			//High
 			Debug.Log("The spirit is almost reincarnating");
+			TransformHi();
 		}
 	}
 
 
 	private void TransformHi(){
-		//TODO: implement this
+		lowForm.SetActive(false);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(true);
+
 	}
 	private void TransformMedium(){
-		//TODO: implement this
+		lowForm.SetActive(false);
+		mediumForm.SetActive(true);
+		hiForm.SetActive(false);
 	}
 
 	private void TransformLow(){
-		//TODO: implement this
+		lowForm.SetActive(true);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(false);
 	}
 
 
 
 	public void Die(){
-		Debug.Log("The spirit has left us");	
+		Debug.Log("The spirit has left us");
+		lowForm.SetActive(false);
+		mediumForm.SetActive(false);
+		hiForm.SetActive(false);
 	}
 
 	public void PlayRegainHealthSound(){
