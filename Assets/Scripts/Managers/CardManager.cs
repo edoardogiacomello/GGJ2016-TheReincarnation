@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CardManager : MonoBehaviour {
     public static CardManager instance;
@@ -30,11 +31,13 @@ public class CardManager : MonoBehaviour {
         cameraZValue = Camera.main.transform.position.z;
         inSlide = false;
         audioSrc = GetComponent<AudioSource>();
+
     }
 
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0)) { 
         startPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Debug.Log("start" + startPosition);
