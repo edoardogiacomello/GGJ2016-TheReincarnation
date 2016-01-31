@@ -175,8 +175,12 @@ namespace ProgressBar
         /// </summary>
         public void StartRound(float time)
         {
-            m_Fill = GetComponent<Image>();
+            // Reset the starting values
+            TransitoryValue = 0;
             m_Value = 0;
+            // get the image component
+            m_Fill = GetComponent<Image>();
+            // set the final target
             IncrementValue(100);
             ProgressSpeed = 1f/time;
             SetFillerSize(0);
