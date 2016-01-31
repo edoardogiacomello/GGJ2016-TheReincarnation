@@ -1723,6 +1723,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
   m_IsPrefabParent: 0
@@ -3414,7 +3426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1118175883}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: fcac62c039232934fb4e6199a298ef66, type: 3}
 --- !u!82 &1118175883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3663,6 +3675,18 @@ Prefab:
     - target: {fileID: 461282, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
@@ -4056,6 +4080,18 @@ Prefab:
     - target: {fileID: 461282, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
@@ -4833,6 +4869,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
   m_IsPrefabParent: 0
@@ -4905,6 +4953,18 @@ Prefab:
     - target: {fileID: 190128, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_TagString
       value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
@@ -5547,6 +5607,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
   m_IsPrefabParent: 0
@@ -5609,6 +5681,18 @@ Prefab:
     - target: {fileID: 461282, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
@@ -6230,6 +6314,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
   m_IsPrefabParent: 0
@@ -6292,6 +6388,18 @@ Prefab:
     - target: {fileID: 461282, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
@@ -6361,6 +6469,18 @@ Prefab:
     - target: {fileID: 461282, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21242970, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a8e12ea27cfc458a47b7f8719c852, type: 2}
