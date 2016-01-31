@@ -72,7 +72,9 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	public void StageSucceded(){
 		EnableDrag(false);
+		currentHealth += healthLossOnStageFailure;
 		spirit.RegainHealth();
+		spirit.Trasnformation();
 		stageManager.StartNextStage();
 	}
 

@@ -1,15 +1,21 @@
 fileFormatVersion: 2
-guid: 5b6967e5ada763745894cd706aaf0ff0
-timeCreated: 1454208431
+guid: c6208117d346bba4b9d445169d98d527
+timeCreated: 1454209490
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: oni_teen1_Group16077
+    100000: collana
+    100002: Object001
+    100004: //RootNode
+    100006: oni_uv_oni_adult_002_group2
+    400000: collana
+    400002: Object001
+    400004: //RootNode
+    400006: oni_uv_oni_adult_002_group2
+    2300000: Object001
+    3300000: Object001
+    4300000: Object001
     7400000: Default Take
     9500000: //RootNode
   materials:
