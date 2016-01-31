@@ -44,6 +44,7 @@ public class StageManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="stage">Stage.</param>
 	private void StartStage(Stage stage){
+		GameManager.instance.spirit.Trasnformation();
 		//TODO: implement this
 		//TODO: Show suggestion
 		//Enabling dragging of items on gameManager
