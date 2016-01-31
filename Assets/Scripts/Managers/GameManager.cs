@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ProgressBar;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public StageManager stageManager;
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
-	public Spirit spirit;	
+	public Spirit spirit;
+
 
 	//GUI reference
 	public GuiCentralButtonManager buttonManager;
     public GuiStartButtonManager startButtonManager;
+	public Transform suggestionButton;
     public GameObject youWinLabel;
     public GameObject youLoseLabel;
 
