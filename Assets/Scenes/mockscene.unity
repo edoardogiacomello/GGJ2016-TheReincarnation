@@ -4605,6 +4605,10 @@ Prefab:
       propertyPath: startButtonManager
       value: 
       objectReference: {fileID: 1998935911}
+    - target: {fileID: 11414132, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
+      propertyPath: suggestionButton
+      value: 
+      objectReference: {fileID: 202201879}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d6b20d71138694bb94ae90fc872501, type: 2}
   m_IsPrefabParent: 0

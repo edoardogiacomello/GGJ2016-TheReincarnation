@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour {
 	public StageManager stageManager;
     public CombinationManager combinationManager;
 	public GlobalSoundManager globalSoundManager;
-	public Spirit spirit;	
+	public Spirit spirit;
+
 
 	//GUI reference
 	public GuiCentralButtonManager buttonManager;
     public GuiStartButtonManager startButtonManager;
+	public Transform suggestionButton;
 
  	//Progress Bar
     public ProgressRadialBehaviour progressBar;	

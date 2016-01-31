@@ -31,13 +31,12 @@ public class Spirit : MonoBehaviour {
 		HideSuggestion();
 		currentSuggestion = suggestion;
         oldPosition = suggestion.transform;
-        suggestion.transform.position = new Vector3(-3, -4, suggestion.transform.position.z);
+		suggestion.transform.position = GameManager.instance.suggestionButton.position;
        // Debug.Log("Suggestion invoked in " + suggestion.transform.position.x);
 		Invoke("HideSuggestion", suggestionTime);
 	}
 
 	public void HideSuggestion(){
-        //TODO: Hide the suggestion baloon
 		if (currentSuggestion == null) return;
         currentSuggestion.gameObject.SetActive(false);
 	}
